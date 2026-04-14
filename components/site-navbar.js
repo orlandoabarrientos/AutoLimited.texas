@@ -20,7 +20,7 @@ class SiteNavbar extends HTMLElement {
                     </div>
 
                     <nav class="main-nav" aria-label="Navegacion principal">
-                        <a href="pre-approved.html" data-i18n="nav.requestCall">Pre-Approve</a>
+                        <a href="pre-approved.html" data-i18n="nav.requestCall">Pre-Approval</a>
                         <a href="inventory.html" data-i18n="nav.inventory">Inventory</a>
                         <a href="contact.html" data-i18n="nav.contactUs">Contact Us</a>
                     </nav>

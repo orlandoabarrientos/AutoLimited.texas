@@ -201,7 +201,7 @@ async function sendPreapproveEmail(data) {
     const submittedAt = new Date().toLocaleString(getCurrentLanguage() === "es" ? "es-US" : "en-US");
     const params = {
         to_email: config.recipientEmail,
-        form_type: "Pre-Approved",
+        form_type: "Pre-Approval",
         subject: `Pre-Approval Application | ${data.fullName}`,
         submitted_at: submittedAt,
         applicant_name: data.fullName,

@@ -26,7 +26,6 @@ window.AUTO_LIMITED_VEHICLES = [
             "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.34 PM.jpeg",
             "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.35 PM (1).jpeg",
             "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.35 PM (2).jpeg",
-            "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.35 PM (3).jpeg",
             "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.35 PM (4).jpeg",
             "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.35 PM (5).jpeg",
             "img/commercial vehicule/2019 INTERNATIONAL 4300 26FT/WhatsApp Image 2026-04-11 at 10.27.35 PM (6).jpeg",
