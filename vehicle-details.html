@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="vehicle.pageTitle">Auto Limited | Vehicle Details, Specs and Financing</title>
+    <meta name="description"
+        content="View vehicle details, photos, specs, and financing options at Auto Limited. Used cars, trucks, and SUVs in Texas." />
+    <meta name="keywords"
+        content="vehicle details Texas, used car specs, auto financing options Texas, Auto Limited inventory" />
+    <meta name="author" content="Auto Limited" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#2b3545" />
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Kennedale" />
+    <link rel="canonical" href="https://autolimited.texas/vehicle-details.html" />
+    <link rel="alternate" hreflang="en-us" href="https://autolimited.texas/vehicle-details.html" />
+    <link rel="alternate" hreflang="es-us" href="https://autolimited.texas/vehicle-details.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Auto Limited" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Auto Limited | Vehicle Details, Specs and Financing" />
+    <meta property="og:description"
+        content="Explore detailed photos, mileage, specs, and financing information for each vehicle in our Texas inventory." />
+    <meta property="og:url" content="https://autolimited.texas/vehicle-details.html" />
+    <meta property="og:image" content="https://autolimited.texas/assets/hero.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Auto Limited | Vehicle Details, Specs and Financing" />
+    <meta name="twitter:description"
+        content="Get complete vehicle specs and financing breakdowns at Auto Limited." />
+    <meta name="twitter:image" content="https://autolimited.texas/assets/hero.webp" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AutoDealer",
+            "@id": "https://autolimited.texas/#autodealer",
+            "name": "Auto Limited",
+            "url": "https://autolimited.texas/",
+            "image": "https://autolimited.texas/assets/hero.webp",
+            "logo": "https://autolimited.texas/assets/logo.png",
+            "telephone": "+1-214-762-3393",
+            "email": "office@autolimitedusa.com",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "7414 Mansfield Hwy Ste 204",
+                "addressLocality": "Kennedale",
+                "addressRegion": "TX",
+                "postalCode": "76060",
+                "addressCountry": "US"
+            },
+            "areaServed": "Texas",
+            "sameAs": [
+                "https://www.instagram.com/autolimited.texas/",
+                "https://www.facebook.com/search/top?q=Auto%20Limited%20Auto%20Sales.%20%7C%20Kennedale%20TX"
+            ]
+        }
+    </script>
+    <link rel="preload" href="assets/fonts/BebasNeue-400.ttf" as="font" type="font/ttf" />
+    <link rel="preload" href="assets/fonts/BarlowCondensed-700.ttf" as="font" type="font/ttf" />
+    <link rel="preload" href="assets/fonts/Inter-700.ttf" as="font" type="font/ttf" />
+    <link rel="stylesheet" href="assets/local-fonts.css" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="vehicle-details.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="vehicle-details-page">
+    <site-navbar></site-navbar>
+
+    <main class="vehicle-details-main">
+        <section class="vehicle-title-bar">
+            <div class="vehicle-title-row">
+                <div class="vehicle-title-wrap">
+                    <h1 id="detailTitle"></h1>
+                    <p id="detailMeta"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="vehicle-details-shell">
+            <div class="details-top">
+                <div class="details-left">
+                    <div class="main-img-container">
+                        <button class="nav-btn prev">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <img id="detailImage" src="" alt="Vehiculo" />
+                        <button class="nav-btn next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="thumbs-wrap">
+                        <button id="thumbsPrev" class="thumbs-nav prev" type="button" aria-label="Fotos anteriores">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <div id="thumbsTrack" class="thumbs-track" aria-label="Miniaturas del vehiculo"></div>
+                        <button id="thumbsNext" class="thumbs-nav next" type="button" aria-label="Siguientes fotos">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <a href="pre-approved.html" class="btn-preapproval" data-i18n="vehicle.preApproval">Pre-Approval</a>
+                </div>
+
+                <aside class="details-right">
+                    <div class="price-badge price-panel">
+                        <article class="price-card cash-card">
+                            <div class="cash-left">
+                                <div class="tag-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M21 10.5 13.5 3H6a2 2 0 0 0-2 2v7.5l7.5 7.5a2.12 2.12 0 0 0 3 0l6.5-6.5a2.12 2.12 0 0 0 0-3ZM8.5 9A1.5 1.5 0 1 1 10 7.5 1.5 1.5 0 0 1 8.5 9Z" />
+                                    </svg>
+                                </div>
+                                <h2 id="detailCash" class="cash-price"></h2>
+                            </div>
+                            <div class="cash-right">
+                                <span id="detailCashLine1" class="small">Cash</span>
+                                <span id="detailCashLine2" class="small">Price</span>
+                            </div>
+                        </article>
+                        <div id="detailFinanceBox" class="finance-wrap" hidden>
+                            <div class="price-divider">OR</div>
+                            <article class="price-card finance-card">
+                                <div class="finance-top">
+                                    <h2 id="detailFinanced" class="finance-price"></h2>
+                                    <div id="detailFinancedLabel" class="finance-label">Financed</div>
+                                </div>
+                                <div id="detailFinanceBottom" class="finance-bottom">
+                                    <span id="detailOnly" class="only">only</span>
+                                    <span id="detailDownPrice" class="down-price"></span>
+                                    <span id="detailDown" class="down-text"></span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="specs-box">
+                        <h2 data-i18n="vehicle.features">Features</h2>
+                        <div id="detailSpecsGrid" class="detail-specs-grid"></div>
+                    </div>
+
+                    <div class="highlights-box">
+                        <h3 data-i18n="vehicle.highlights">Highlights</h3>
+                        <div id="detailHighlights" class="highlight-tags"></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="similar-vehicles-wrapper">
+            <div class="similar-inner">
+                <div class="similar-header">
+                    <h2 data-i18n="vehicle.similarVehicles">SIMILAR VEHICLES</h2>
+                    <div class="divider">
+                        <span></span>
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path
+                                d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z">
+                            </path>
+                        </svg>
+                        <span></span>
+                    </div>
+                </div>
+                <div id="similarGrid" class="similar-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script src="i18n.js"></script>
+    <script type="module" src="components/site-navbar.js"></script>
+    <script type="module" src="components/site-footer.js"></script>
+    <script src="vehicles-data.js"></script>
+    <script src="vehicle-details.js"></script>
+</body>
+
+</html>
