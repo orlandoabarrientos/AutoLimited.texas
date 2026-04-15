@@ -5,6 +5,10 @@ const preapproveStatus = document.getElementById("preapproveStatus");
 const confirmCredit = document.getElementById("confirmCredit");
 const preapproveSubmitButton = preapproveForm ? preapproveForm.querySelector("button[type='submit']") : null;
 const vehicleInterestSelect = document.getElementById("vehicleInterestSelect");
+const idTypeSelect = document.getElementById("idTypeSelect");
+const idRegionField = document.getElementById("idRegionField");
+const idRegionLabel = document.getElementById("idRegionLabel");
+const idRegionInput = document.getElementById("idRegionInput");
 
 let preapproveEmailInitialized = false;
 
@@ -238,6 +242,7 @@ function buildPreapprovePayload() {
         ssn: ssnValue,
         birthDate: getFieldValue("birthDate"),
         idType: getSelectText("idType"),
+        idRegionLabel: getIdRegionLabelText(),
         idState: getFieldValue("idState"),
         idNumber: getFieldValue("idNumber"),
         street: getFieldValue("street"),
@@ -275,7 +280,7 @@ function buildPreapproveEmailHtml(data) {
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">SSN / ITIN</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.ssn)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Date of Birth</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.birthDate)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">ID Type</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.idType)}</td></tr>
-                        <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">ID State</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.idState)}</td></tr>
+                        <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">${escapeHtml(data.idRegionLabel)}</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.idState)}</td></tr>
                         <tr><td style="padding:8px 0;font-size:13px;color:#5b6b84;">ID Number</td><td style="padding:8px 0;font-size:14px;font-weight:700;">${escapeHtml(data.idNumber)}</td></tr>
                     </table>
 
@@ -320,6 +325,8 @@ async function sendPreapproveEmail(data) {
         ssn: data.ssn,
         birth_date: data.birthDate,
         id_type: data.idType,
+        id_region_label: data.idRegionLabel,
+        id_region_value: data.idState,
         id_state: data.idState,
         id_number: data.idNumber,
         street: data.street,
@@ -367,6 +374,37 @@ function syncSsnState() {
     }
 
     validateField(ssnInput);
+}
+
+function getIdRegionLabelText() {
+    const selectedType = idTypeSelect ? String(idTypeSelect.value || "").trim() : "";
+    if (selectedType === "foreign") {
+        return i18nText("preapprove.idCountry", "ID Country");
+    }
+    return i18nText("preapprove.idState", "ID State");
+}
+
+function syncIdRegionField() {
+    if (!idTypeSelect || !idRegionField || !idRegionLabel || !idRegionInput) {
+        return;
+    }
+
+    const selectedType = String(idTypeSelect.value || "").trim();
+
+    if (!selectedType) {
+        idRegionField.hidden = true;
+        idRegionInput.required = false;
+        idRegionInput.value = "";
+        idRegionLabel.dataset.i18n = "preapprove.idState";
+        idRegionLabel.textContent = i18nText("preapprove.idState", "ID State");
+        clearFieldError(idRegionInput);
+        return;
+    }
+
+    idRegionField.hidden = false;
+    idRegionInput.required = true;
+    idRegionLabel.dataset.i18n = selectedType === "foreign" ? "preapprove.idCountry" : "preapprove.idState";
+    idRegionLabel.textContent = getIdRegionLabelText();
 }
 
 function getFieldContainer(field) {
@@ -511,6 +549,9 @@ if (noSsnCheckbox) {
 if (preapproveForm) {
     preapproveForm.querySelectorAll("input, select, textarea").forEach((field) => {
         const runValidation = () => {
+            if (field === idTypeSelect) {
+                syncIdRegionField();
+            }
             validateField(field);
             clearStatus();
         };
@@ -557,6 +598,7 @@ if (preapproveForm) {
         preapproveForm.reset();
         populateVehicleInterestOptions();
         applyVehicleInterestFromQuery();
+        syncIdRegionField();
         syncSsnState();
         if (confirmCredit) {
             clearFieldError(confirmCredit);
@@ -567,6 +609,7 @@ if (preapproveForm) {
 window.addEventListener("autolimited:languagechange", () => {
     populateVehicleInterestOptions();
     applyVehicleInterestFromQuery();
+    syncIdRegionField();
     refreshErrorTranslations();
 
     if (preapproveSubmitButton && preapproveSubmitButton.disabled) {
@@ -584,4 +627,5 @@ window.addEventListener("autolimited:languagechange", () => {
 
 populateVehicleInterestOptions();
 applyVehicleInterestFromQuery();
+syncIdRegionField();
 syncSsnState();

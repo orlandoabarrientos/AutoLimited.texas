@@ -177,7 +177,7 @@ window.AUTO_LIMITED_VEHICLES = [
         fuel: "Gasolina",
         body: "Sedan",
         segment: "passenger",
-        image: "img/passager vehicule/2019 KIA OPTIMA LX/WhatsApp Image 2026-04-14 at 10.54.50 AM (3).jpeg",
+        image: "img/passager vehicule/2019 KIA OPTIMA LX/WhatsApp Image 2026-04-14 at 10.54.50 AM (4).jpeg",
         images: [
             "img/passager vehicule/2019 KIA OPTIMA LX/WhatsApp Image 2026-04-14 at 10.54.50 AM (1).jpeg",
             "img/passager vehicule/2019 KIA OPTIMA LX/WhatsApp Image 2026-04-14 at 10.54.50 AM (2).jpeg",

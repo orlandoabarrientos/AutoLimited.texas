@@ -108,7 +108,7 @@
                         </label>
                         <label class="form-field">
                             <span data-i18n="preapprove.idType">ID Type</span>
-                            <select name="idType" required>
+                            <select id="idTypeSelect" name="idType" required>
                                 <option value="" data-i18n="preapprove.idOptionDefault">Select</option>
                                 <option value="license" data-i18n="preapprove.idOptionLicense">US Driver's License
                                 </option>
@@ -117,9 +117,9 @@
                                 <option value="foreign" data-i18n="preapprove.idOptionForeign">Foreign ID</option>
                             </select>
                         </label>
-                        <label class="form-field">
-                            <span data-i18n="preapprove.idState">ID State</span>
-                            <input type="text" name="idState" required />
+                        <label id="idRegionField" class="form-field" hidden>
+                            <span id="idRegionLabel" data-i18n="preapprove.idState">ID State</span>
+                            <input id="idRegionInput" type="text" name="idState" />
                         </label>
                         <label class="form-field">
                             <span data-i18n="preapprove.idNumber">ID Number</span>
