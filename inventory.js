@@ -280,10 +280,14 @@ function renderPagination(totalItems, totalPages) {
 function createCard(vehicle) {
     const cardTitle = getCardTitle(vehicle);
     const financingHtml = getCardFinancingHtml(vehicle);
+    const soldBadge = vehicle.isSold
+        ? `<span class="inventory-sold-ribbon">${escapeHtml(i18nText("vehicle.soldLabel", "VENDIDO"))}</span>`
+        : "";
 
     return `
     <article class="inventory-card">
       <div class="inventory-card-media">
+                ${soldBadge}
         <img src="${vehicle.image}" alt="${vehicle.title}">
       </div>
       <div class="inventory-card-body">

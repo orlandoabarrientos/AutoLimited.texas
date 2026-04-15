@@ -15,31 +15,31 @@
     <meta name="theme-color" content="#2b3545" />
     <meta name="geo.region" content="US-TX" />
     <meta name="geo.placename" content="Kennedale" />
-    <link rel="canonical" href="https://autolimited.texas/pre-approved.html" />
-    <link rel="alternate" hreflang="en-us" href="https://autolimited.texas/pre-approved.html" />
-    <link rel="alternate" hreflang="es-us" href="https://autolimited.texas/pre-approved.html" />
+    <link rel="canonical" href="https://autolimitedusa.com/pre-approved.html" />
+    <link rel="alternate" hreflang="en-us" href="https://autolimitedusa.com/pre-approved.html" />
+    <link rel="alternate" hreflang="es-us" href="https://autolimitedusa.com/pre-approved.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Auto Limited" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Auto Limited | Pre-Approval for Auto Financing in Texas" />
     <meta property="og:description"
         content="Start your financing process online with Auto Limited and get pre-approval quickly." />
-    <meta property="og:url" content="https://autolimited.texas/pre-approved.html" />
-    <meta property="og:image" content="https://autolimited.texas/assets/hero.webp" />
+    <meta property="og:url" content="https://autolimitedusa.com/pre-approved.html" />
+    <meta property="og:image" content="https://autolimitedusa.com/assets/hero.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Auto Limited | Pre-Approval for Auto Financing in Texas" />
     <meta name="twitter:description"
         content="Complete your pre-approval form online and drive your next vehicle with confidence." />
-    <meta name="twitter:image" content="https://autolimited.texas/assets/hero.webp" />
+    <meta name="twitter:image" content="https://autolimitedusa.com/assets/hero.webp" />
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "AutoDealer",
-            "@id": "https://autolimited.texas/#autodealer",
+            "@id": "https://autolimitedusa.com/#autodealer",
             "name": "Auto Limited",
-            "url": "https://autolimited.texas/",
-            "image": "https://autolimited.texas/assets/hero.webp",
-            "logo": "https://autolimited.texas/assets/logo.png",
+            "url": "https://autolimitedusa.com/",
+            "image": "https://autolimitedusa.com/assets/hero.webp",
+            "logo": "https://autolimitedusa.com/assets/logo.png",
             "telephone": "+1-214-762-3393",
             "email": "office@autolimitedusa.com",
             "priceRange": "$$",
@@ -258,6 +258,13 @@
                     </div>
                 </fieldset>
 
+                <label class="form-field">
+                    <span data-i18n="preapprove.vehicleInterest">Carro de interes</span>
+                    <select id="vehicleInterestSelect" name="vehicleInterest" required>
+                        <option value="" data-i18n="preapprove.vehicleInterestPlaceholder">Selecciona un carro</option>
+                    </select>
+                </label>
+
                 <label class="form-check confirm-row">
                     <input type="checkbox" id="confirmCredit" required />
                     <span data-i18n="preapprove.confirm">Confirm all above is correct and acknowledge you have signed
@@ -280,6 +287,7 @@
     <script type="module" src="components/site-footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="email-config.js"></script>
+    <script src="vehicles-data.js"></script>
     <script src="pre-approved.js"></script>
 </body>
 

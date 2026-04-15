@@ -16,6 +16,8 @@ const detailDown = document.getElementById("detailDown");
 const detailSpecsGrid = document.getElementById("detailSpecsGrid");
 const detailHighlights = document.getElementById("detailHighlights");
 const similarGrid = document.getElementById("similarGrid");
+const detailSoldRibbon = document.getElementById("detailSoldRibbon");
+const btnPreapproval = document.getElementById("btnPreapproval");
 
 const thumbsTrack = document.getElementById("thumbsTrack");
 const thumbsPrev = document.getElementById("thumbsPrev");
@@ -255,9 +257,13 @@ function renderSimilarVehicles(vehicle) {
             const title = escapeHtml(item.title || "Vehicle");
             const price = escapeHtml(extractCashDisplay(item));
             const image = String(item.image || "assets/hero.png");
+            const soldBadge = item.isSold
+                ? `<span class="similar-sold-ribbon">${escapeHtml(i18nText("vehicle.soldLabel", "VENDIDO"))}</span>`
+                : "";
 
             return `
                 <a class="similar-card" href="${href}">
+                    ${soldBadge}
                     <img src="${image}" alt="${title}" loading="lazy" />
                     <h4>${title}</h4>
                     <p>${price}</p>
@@ -525,6 +531,12 @@ function renderVehicle(vehicle) {
             detailImage.src = "assets/hero.png";
             detailImage.alt = "Auto Limited";
         }
+        if (detailSoldRibbon) {
+            detailSoldRibbon.hidden = true;
+        }
+        if (btnPreapproval) {
+            btnPreapproval.href = "pre-approved.html";
+        }
         renderSimilarVehicles(null);
         return;
     }
@@ -542,6 +554,15 @@ function renderVehicle(vehicle) {
 
     if (detailMeta) {
         detailMeta.textContent = metaLine;
+    }
+
+    if (detailSoldRibbon) {
+        detailSoldRibbon.hidden = !vehicle.isSold;
+        detailSoldRibbon.textContent = i18nText("vehicle.soldLabel", "VENDIDO");
+    }
+
+    if (btnPreapproval) {
+        btnPreapproval.href = `pre-approved.html?vehicle=${encodeURIComponent(vehicle.id)}`;
     }
 
     if (detailCash) {

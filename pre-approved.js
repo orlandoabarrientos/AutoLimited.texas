@@ -4,6 +4,7 @@ const noSsnCheckbox = document.getElementById("noSsn");
 const preapproveStatus = document.getElementById("preapproveStatus");
 const confirmCredit = document.getElementById("confirmCredit");
 const preapproveSubmitButton = preapproveForm ? preapproveForm.querySelector("button[type='submit']") : null;
+const vehicleInterestSelect = document.getElementById("vehicleInterestSelect");
 
 let preapproveEmailInitialized = false;
 
@@ -115,6 +116,112 @@ function getSelectText(name) {
     return option ? String(option.textContent || "").trim() : "";
 }
 
+function getVehicleCatalog() {
+    return Array.isArray(window.AUTO_LIMITED_VEHICLES) ? window.AUTO_LIMITED_VEHICLES : [];
+}
+
+function getVehicleLabel(vehicle) {
+    const baseLabel = String(vehicle.detailTitle || vehicle.title || "").trim();
+    if (!baseLabel) {
+        return "";
+    }
+
+    if (!vehicle.isSold) {
+        return baseLabel;
+    }
+
+    return `${baseLabel} (${i18nText("vehicle.soldLabel", "VENDIDO")})`;
+}
+
+function populateVehicleInterestOptions() {
+    if (!vehicleInterestSelect) {
+        return;
+    }
+
+    const currentValue = String(vehicleInterestSelect.value || "");
+    const vehicles = getVehicleCatalog()
+        .slice()
+        .sort((left, right) => String(left.title || "").localeCompare(String(right.title || "")));
+
+    const options = [`<option value="" data-i18n="preapprove.vehicleInterestPlaceholder">${escapeHtml(i18nText("preapprove.vehicleInterestPlaceholder", "Selecciona un carro"))}</option>`];
+
+    vehicles.forEach((vehicle) => {
+        const value = String(vehicle.id || "").trim();
+        const label = getVehicleLabel(vehicle);
+        if (!value || !label) {
+            return;
+        }
+        options.push(`<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`);
+    });
+
+    vehicleInterestSelect.innerHTML = options.join("");
+
+    if (currentValue) {
+        const hasCurrent = Array.from(vehicleInterestSelect.options).some((option) => option.value === currentValue);
+        if (hasCurrent) {
+            vehicleInterestSelect.value = currentValue;
+        }
+    }
+}
+
+function readVehicleInterestQuery() {
+    const params = new URLSearchParams(window.location.search);
+    return String(params.get("vehicle") || params.get("vehicleId") || params.get("id") || "").trim();
+}
+
+function safeDecodeURIComponent(value) {
+    try {
+        return decodeURIComponent(value);
+    } catch {
+        return value;
+    }
+}
+
+function applyVehicleInterestFromQuery() {
+    if (!vehicleInterestSelect) {
+        return;
+    }
+
+    const queryValue = readVehicleInterestQuery();
+    if (!queryValue) {
+        return;
+    }
+
+    const normalizedQuery = queryValue.toLowerCase();
+    const vehicles = getVehicleCatalog();
+
+    const vehicleById = vehicles.find((vehicle) => String(vehicle.id || "").toLowerCase() === normalizedQuery);
+    if (vehicleById) {
+        vehicleInterestSelect.value = String(vehicleById.id);
+        return;
+    }
+
+    const vehicleByTitle = vehicles.find((vehicle) => {
+        const title = String(vehicle.title || "").toLowerCase();
+        const detailTitle = String(vehicle.detailTitle || "").toLowerCase();
+        return title === normalizedQuery || detailTitle === normalizedQuery;
+    });
+
+    if (vehicleByTitle) {
+        vehicleInterestSelect.value = String(vehicleByTitle.id);
+        return;
+    }
+
+    const decoded = safeDecodeURIComponent(queryValue).trim();
+    if (!decoded) {
+        return;
+    }
+
+    const customValue = `custom:${decoded.toLowerCase()}`;
+    const existingCustom = Array.from(vehicleInterestSelect.options).find((option) => option.value === customValue);
+
+    if (!existingCustom) {
+        vehicleInterestSelect.appendChild(new Option(decoded, customValue));
+    }
+
+    vehicleInterestSelect.value = customValue;
+}
+
 function buildPreapprovePayload() {
     const firstName = getFieldValue("firstName");
     const middleName = getFieldValue("middleName");
@@ -147,7 +254,8 @@ function buildPreapprovePayload() {
         jobYears: getFieldValue("jobYears"),
         jobMonths: getFieldValue("jobMonths"),
         incomeType: getSelectText("incomeType"),
-        monthlyIncome: getFieldValue("monthlyIncome")
+        monthlyIncome: getFieldValue("monthlyIncome"),
+        vehicleInterest: getSelectText("vehicleInterest")
     };
 }
 
@@ -163,6 +271,7 @@ function buildPreapproveEmailHtml(data) {
                     <h3 style="margin:0 0 8px;color:#1b4f88;font-size:15px;text-transform:uppercase;">Personal Information</h3>
                     <table style="width:100%;border-collapse:collapse;margin-bottom:14px;">
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;width:220px;">Full Name</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.fullName)}</td></tr>
+                        <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Vehicle Interest</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.vehicleInterest)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">SSN / ITIN</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.ssn)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Date of Birth</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.birthDate)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">ID Type</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.idType)}</td></tr>
@@ -228,6 +337,7 @@ async function sendPreapproveEmail(data) {
         job_months: data.jobMonths,
         income_type: data.incomeType,
         monthly_income: data.monthlyIncome,
+        vehicle_interest: data.vehicleInterest,
         message_html: buildPreapproveEmailHtml(data)
     };
 
@@ -445,6 +555,8 @@ if (preapproveForm) {
         showStatus("preapprove.success", "Application submitted successfully.", false);
 
         preapproveForm.reset();
+        populateVehicleInterestOptions();
+        applyVehicleInterestFromQuery();
         syncSsnState();
         if (confirmCredit) {
             clearFieldError(confirmCredit);
@@ -453,6 +565,8 @@ if (preapproveForm) {
 }
 
 window.addEventListener("autolimited:languagechange", () => {
+    populateVehicleInterestOptions();
+    applyVehicleInterestFromQuery();
     refreshErrorTranslations();
 
     if (preapproveSubmitButton && preapproveSubmitButton.disabled) {
@@ -468,4 +582,6 @@ window.addEventListener("autolimited:languagechange", () => {
     }
 });
 
+populateVehicleInterestOptions();
+applyVehicleInterestFromQuery();
 syncSsnState();

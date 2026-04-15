@@ -126,6 +126,8 @@
             "preapprove.incomeOptionFixed": "Fixed Income",
             "preapprove.incomeOptionCash": "Cash Income",
             "preapprove.incomeOptionMilitary": "Military",
+            "preapprove.vehicleInterest": "Vehicle of interest",
+            "preapprove.vehicleInterestPlaceholder": "Select a vehicle",
             "preapprove.confirm": "Confirm all above is correct and acknowledge you have signed credit app",
             "preapprove.submit": "Submit Application",
             "preapprove.success": "Application submitted successfully. We will contact you soon.",
@@ -190,6 +192,7 @@
             "vehicle.onlyWord": "only",
             "vehicle.fromWord": "from",
             "vehicle.downPaymentWord": "Down Payment",
+            "vehicle.soldLabel": "SOLD",
             "vehicle.highlightFallback1": "Inspected unit",
             "vehicle.highlightFallback2": "Ready for delivery",
             "vehicle.highlightFallback3": "Financing available"
@@ -316,6 +319,8 @@
             "preapprove.incomeOptionFixed": "Ingreso Fijo",
             "preapprove.incomeOptionCash": "Ingreso en Efectivo",
             "preapprove.incomeOptionMilitary": "Militar",
+            "preapprove.vehicleInterest": "Carro de interes",
+            "preapprove.vehicleInterestPlaceholder": "Selecciona un carro",
             "preapprove.confirm": "Confirmo que toda la informacion anterior es correcta y reconozco que he firmado la solicitud de credito",
             "preapprove.submit": "Enviar Solicitud",
             "preapprove.success": "Solicitud enviada correctamente. Te contactaremos pronto.",
@@ -380,6 +385,7 @@
             "vehicle.onlyWord": "solo",
             "vehicle.fromWord": "desde",
             "vehicle.downPaymentWord": "Down Payment",
+            "vehicle.soldLabel": "VENDIDO",
             "vehicle.highlightFallback1": "Unidad revisada",
             "vehicle.highlightFallback2": "Lista para entrega",
             "vehicle.highlightFallback3": "Financiamiento disponible"

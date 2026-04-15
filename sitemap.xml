@@ -1,62 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://autolimited.texas/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/inventory.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/inventory.html</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/pre-approved.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/pre-approved.html</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/contact.html</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/contact.html</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/vehicle-details.html?id=international4300-2019</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=international4300-2019</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/vehicle-details.html?id=accordsport2019</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=accordsport2019</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/vehicle-details.html?id=accordlx2018</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=soniclt2015</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/vehicle-details.html?id=runner2015</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=explorerxlt2018</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/vehicle-details.html?id=charger2019</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=optimalx2019</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autolimited.texas/vehicle-details.html?id=sonic2016</loc>
-    <lastmod>2026-04-13</lastmod>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=accordlx2018</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=runner2015</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=charger2019</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://autolimitedusa.com/vehicle-details.html?id=sonic2016</loc>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
