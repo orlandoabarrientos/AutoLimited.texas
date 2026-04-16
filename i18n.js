@@ -27,7 +27,7 @@
             "footer.hoursValue": "Monday to Saturday 10:00 am - 7:00 pm",
 
             "index.heroTitle": "ARE YOU READY?",
-            "index.heroSubtitle": "IN-HOUSE FINANCING",
+            "index.heroSubtitle": "FINANCE OPTION AVAILABLE",
             "index.heroCta": "Get Pre-Approval",
             "index.salesTitle": "YOUR WAY TO DRIVE",
             "index.reviewsTitle": "reviews",
@@ -35,7 +35,7 @@
             "index.salesCashText": "We offer excellent cash prices and handle the full process for you. It includes vehicle registration, plates, and state taxes. We take care of all paperwork so you do not have to worry. Your vehicle can be ready to drive the same day.",
             "index.salesBankTitle": "BANK FINANCING",
             "index.salesBankText": "We have partnerships with great banks to help you buy your vehicle with competitive options that fit your budget. We help you get a good rate and comfortable monthly payments. This financing can also help you build or improve your credit.",
-            "index.salesInHouseTitle": "BUY HERE, PAY HERE (FINANCING OPTION AVAILABLE)",
+            "index.salesInHouseTitle": "BUY HERE, PAY HERE (IN-HOUSE FINANCING)",
             "index.salesInHouseText": "No credit? No problem. We can help. We offer in-house financing on selected vehicles with few requirements and a fast process. We handle all paperwork, and with your ID you can drive out the same day.",
 
             "contact.pageTitle": "Auto Limited | Contact",
@@ -221,15 +221,15 @@
             "footer.hoursValue": "Lunes a Sabado 10:00 am - 7:00 pm",
 
             "index.heroTitle": "ESTAS LISTO?",
-            "index.heroSubtitle": "FINANCIAMIENTO EN CASA",
+            "index.heroSubtitle": "OPCION DE FINANCIAMIENTO DISPONIBLE",
             "index.heroCta": "Pre-Aprobacion",
             "index.salesTitle": "TIPOS DE VENTA",
             "index.reviewsTitle": "reviews",
-            "index.salesCashTitle": "VENTAS DE CONTADO",
+            "index.salesCashTitle": "VENTAS AL CONTADO - CASH DEALS",
             "index.salesCashText": "Ofrecemos excelentes precios en compras de contado y nos encargamos de todo el proceso por ti. Incluye registro del vehiculo, placas y taxes requeridos por el estado. Nos ocupamos de todo el papeleo para que no tengas que preocuparte por nada. Tu vehiculo estara listo para manejar el mismo dia.",
             "index.salesBankTitle": "BANK FINANCING - FINANCIAMIENTO BANCARIO",
             "index.salesBankText": "Contamos con alianzas con excelentes bancos para ayudarte a comprar tu vehiculo con opciones competitivas que se ajustan a tu presupuesto. Te ayudamos a conseguir un buen rate y estructurar pagos comodos. Ademas, este tipo de financiamiento te permite construir o mejorar tu credito.",
-            "index.salesInHouseTitle": "COMPRA AQUI, PAGA AQUI (OPCION DE FINANCIAMIENTO DISPONIBLE)",
+            "index.salesInHouseTitle": "BUY HERE, PAY HERE (IN-HOUSE FINANCING) - FINANCIAMIENTO EN CASA",
             "index.salesInHouseText": "Si no tienes credito, no hay problema. Nosotros te ayudamos. Ofrecemos opciones de financiamiento en casa en vehiculos seleccionados, con pocos requisitos y un proceso rapido. Nos encargamos de todo el papeleo y con solo tu ID puedes salir manejando el mismo dia.",
 
             "contact.pageTitle": "Auto Limited | Contacto",
