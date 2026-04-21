@@ -239,6 +239,8 @@ function buildPreapprovePayload() {
         firstName,
         middleName,
         lastName,
+        email: getFieldValue("email"),
+        phone: getFieldValue("phone"),
         ssn: ssnValue,
         birthDate: getFieldValue("birthDate"),
         idType: getSelectText("idType"),
@@ -276,6 +278,8 @@ function buildPreapproveEmailHtml(data) {
                     <h3 style="margin:0 0 8px;color:#1b4f88;font-size:15px;text-transform:uppercase;">Personal Information</h3>
                     <table style="width:100%;border-collapse:collapse;margin-bottom:14px;">
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;width:220px;">Full Name</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.fullName)}</td></tr>
+                        <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Email</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.email)}</td></tr>
+                        <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Phone</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.phone)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Vehicle Interest</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.vehicleInterest)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">SSN / ITIN</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.ssn)}</td></tr>
                         <tr><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:13px;color:#5b6b84;">Date of Birth</td><td style="padding:8px 0;border-bottom:1px solid #eef3fb;font-size:14px;font-weight:700;">${escapeHtml(data.birthDate)}</td></tr>
@@ -322,6 +326,8 @@ async function sendPreapproveEmail(data) {
         first_name: data.firstName,
         middle_name: data.middleName,
         last_name: data.lastName,
+        email: data.email,
+        phone: data.phone,
         ssn: data.ssn,
         birth_date: data.birthDate,
         id_type: data.idType,
