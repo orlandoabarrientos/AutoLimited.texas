@@ -1,0 +1,248 @@
+.preapprove-page {
+    background: #f3f5f8;
+    color: #132236;
+    font-family: "Inter", sans-serif;
+}
+
+.preapprove-main {
+    padding-top: 118px;
+    padding-bottom: 72px;
+}
+
+.preapprove-shell {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.preapprove-shell h1 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(2.1rem, 3.5vw, 3.2rem);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #0f1b2a;
+}
+
+.preapprove-form {
+    display: grid;
+    gap: 16px;
+}
+
+.preapprove-form fieldset {
+    margin: 0;
+    border: 1px solid #d5dee8;
+    border-radius: 12px;
+    padding: 16px;
+    background: #ffffff;
+}
+
+.preapprove-form legend {
+    padding: 0 8px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #0f1b2a;
+}
+
+.form-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.form-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.form-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+}
+
+.form-field span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #233346;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid #c5d1df;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    font-family: "Inter", sans-serif;
+    color: #111827;
+    background: #fdfefe;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    outline: none;
+    border-color: #2f7fc9;
+    box-shadow: 0 0 0 3px rgba(47, 127, 201, 0.14);
+}
+
+.form-field input:disabled {
+    background: #eef2f7;
+    color: #637488;
+}
+
+.form-field.is-invalid input,
+.form-field.is-invalid select {
+    border-color: #d92d20;
+    background: #fff4f2;
+    box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.12);
+}
+
+.field-error {
+    margin: 2px 0 0;
+    font-size: 0.79rem;
+    font-weight: 700;
+    color: #b42318;
+    line-height: 1.25;
+}
+
+.form-span-2 {
+    grid-column: span 2;
+}
+
+.form-help {
+    margin: 0;
+    grid-column: 1 / -1;
+    font-size: 0.86rem;
+    color: #435668;
+}
+
+.form-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #223244;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-check-inline {
+    margin-top: 28px;
+}
+
+.length-row {
+    display: grid;
+    gap: 6px;
+}
+
+.length-row>span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #233346;
+}
+
+.length-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.length-fields .form-field {
+    gap: 0;
+}
+
+.confirm-row {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #d5dee8;
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.confirm-row span {
+    line-height: 1.3;
+}
+
+.confirm-row.is-invalid {
+    border-color: #d92d20;
+    background: #fff4f2;
+}
+
+.preapprove-actions {
+    display: grid;
+    justify-items: start;
+    gap: 10px;
+}
+
+.preapprove-submit {
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #d61f1f 0%, #b31010 100%);
+    color: #ffffff;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    min-height: 48px;
+    padding: 10px 26px;
+    cursor: pointer;
+}
+
+.preapprove-status {
+    margin: 0;
+    color: #1d6a34;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.preapprove-status.is-error {
+    color: #b42318;
+}
+
+@media (max-width: 1100px) {
+    .form-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-span-2 {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 700px) {
+    .preapprove-main {
+        padding-top: 108px;
+    }
+
+    .preapprove-shell {
+        padding: 0 12px;
+    }
+
+    .form-grid-4,
+    .form-grid-3,
+    .form-grid-2,
+    .length-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .form-span-2 {
+        grid-column: auto;
+    }
+
+    .form-check-inline {
+        margin-top: 0;
+    }
+}
