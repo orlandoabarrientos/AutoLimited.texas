@@ -143,15 +143,11 @@ function populateVehicleInterestOptions() {
     }
 
     const currentValue = String(vehicleInterestSelect.value || "");
+
     const vehicles = getVehicleCatalog()
+        .filter(vehicle => !vehicle.isSold)
         .slice()
-        .sort((left, right) => {
-            const soldOrder = Number(Boolean(left.isSold)) - Number(Boolean(right.isSold));
-            if (soldOrder !== 0) {
-                return soldOrder;
-            }
-            return String(left.title || "").localeCompare(String(right.title || ""));
-        });
+        .sort((left, right) => String(left.title || "").localeCompare(String(right.title || "")));
 
     const options = [`<option value="" data-i18n="preapprove.vehicleInterestPlaceholder">${escapeHtml(i18nText("preapprove.vehicleInterestPlaceholder", "Selecciona un carro"))}</option>`];
 
