@@ -1,0 +1,11 @@
+{
+  "name": "autolimited",
+  "version": "1.0.0",
+  "description": "Sitio web de Auto Limited",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}

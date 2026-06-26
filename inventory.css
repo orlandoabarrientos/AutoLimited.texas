@@ -294,7 +294,7 @@
 }
 
 .inventory-card-media {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 9 / 10;
     overflow: hidden;
     background: #d5d5d5;
     position: relative;
